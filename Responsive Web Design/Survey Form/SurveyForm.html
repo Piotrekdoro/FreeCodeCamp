@@ -1,0 +1,101 @@
+
+<!--
+1). You should have a page title in an h1 element with an id of title
+2). You should have a short explanation in a p element with an id of description
+3). You should have a form element with an id of survey-form
+4). Inside the form element, you are required to enter your name in an input field
+    that has an id of name and a type of text
+5). Inside the form element, you are required to enter your email in an input feld
+    that has an id of email
+6). If you enter an email that is not formatted correctly, you will see an HTML5 validation error
+7). Inside the form, you can enter a number in an input field that has an id of number
+8). The number input should not accept non-numbers, either by preventing you from typing them or by
+    showing an HTML5 validation error (depending on your browser).
+9). If you enter numbers outside the range of the number input, which are defined by the min and max
+    attributes, you will see an HTML5 validation error
+10).For the name, email, and number input fields, you can see corresponding label elements in the
+    form, that describe the purpose of each field with the following ids:
+    id="name-label", id="email-label", and id="number-label"
+11). For the name, email, and number input fields, you can see placeholder text that gives a
+    description or instructions for each field
+12). Inside the form element, you should have a select dropdown element with an id of dropdown
+    and at least two options to choose from
+13). Inside the form element, you can select an option from a group of at least two radio buttons
+    that are grouped using the name attribute
+14). Inside the form element, you can select several fields from a series of checkboxes,
+    each of which must have a value attribute
+15). Inside the form element, you are presented with a textarea for additional comments
+16). Inside the form element, you are presented with a button with id of submit to submit all the inputs
+
+Fulfill the user stories and pass all the tests below to complete this project.
+Give it your own personal style. Happy Coding!
+
+Note: Be sure to add <link rel="stylesheet" href="styles.css"> in your HTML to link your stylesheet
+and apply your CSS
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">Pump station form</h1>
+    <p id="description">Please fill out the form below:</p>
+    <div class="form">
+    <form id="survey-form">
+        <fieldset>
+            <legend style="font-weight:bold">Basic info</legend>
+            <label id="name-label" for="name" >Company name:</label>
+            <input id='name' type="text" placeholder="e.g. Stuff Industries" required>
+            <label id="email-label" for="email" >Company email:</label>
+            <input id='email' type="email" placeholder="example@stuff.com" required>
+            <label id="number-label" for="number">Height of pump station:</label>
+            <input id="number" type="number" min="1000" max="5000" step="10" placeholder="1000-5000 mm" required>
+            <label for="dropdown">Select diameter:</label>
+            <select id="dropdown" required>
+                <option value="" disabled selected hidden>Diameter</option>
+                <option value="1000">1000</option>
+                <option value="1200">1200</option>
+                <option value="1500">1500</option>
+                <option value="2000">2000</option>
+                <option value="2500">2500</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend style="font-weight:bold">Ventilation</legend>
+            <label for="ventilationPVC">
+                <input id="ventilationPVC" name="ventilation" type="radio" value="PVC" > 
+            PVC</label>
+            <label for="ventilationStainlessSteel">
+                <input id="ventilationStainlessSteel" name="ventilation" type="radio" value="StainlessSteel" > 
+            Stainless steel</label>
+            <label for="ventilationNone">
+                <input id="ventilationNone" name="ventilation" type="radio" value="None" checked > 
+            None</label>
+        </fieldset>
+        <fieldset>
+            <legend style="font-weight:bold">Additional equipment</legend>
+            <label for="Ladder"></label>
+                <input id="Ladder" type="checkbox" value="Ladder">
+            Ladder</label>
+            <label for="Handrail"></label>
+                <input id="Handrail" type="checkbox" value="Handrail">
+            Handrail</label>
+            <label for="ServicePlatform"></label>
+                <input id="ServicePlatform " type="checkbox" value="ServicePlatform">
+            Service platform</label>
+            <label for="FurtherDetails"> Please, provide any addictional comments:
+                <textarea id="FurtherDetails" cols="50" rows="10" placeholder="Details..."></textarea>
+                </label>
+        </fieldset>
+        <input id="submit" type="submit" value="SUBMIT" style="font-weight:bold">
+    </form>
+    </div>
+</body>
+</html>
