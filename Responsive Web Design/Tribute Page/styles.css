@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: antiquewhite;
+    }
+
+
+header {
+    color: black;
+    text-align: center;
+    background-color: rgb(253, 173, 0) ;   
+    border-bottom: 0.25rem solid gray;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 0;
+}
+
+header>p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+figcaption {
+    text-align: center;
+}
+
+#tribute-info {
+    margin: auto;
+    max-width: 80%;
+    background-color: blue;
+    color: aqua;
+}

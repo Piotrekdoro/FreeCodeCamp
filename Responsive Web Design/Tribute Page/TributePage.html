@@ -1,0 +1,116 @@
+<!--
+User Stories:
+
+1). Your tribute page should have a main element with a corresponding id of main, which contains all
+    other elements
+2). You should see an element with an id of title, which contains a string (i.e. text), that describes
+    the subject of the tribute page (e.g. "Dr. Norman Borlaug")
+3). You should see either a figure or a div element with an id of img-div
+4). Within the #img-div element, you should see an img element with a corresponding id="image"
+5). Within the #img-div element, you should see an element with a corresponding id="img-caption"
+    that contains textual content describing the image shown in #img-div
+6). You should see an element with a corresponding id="tribute-info", which contains textual content
+    describing the subject of the tribute page
+7). You should see an element with a corresponding id="tribute-link", which links to an outside site,
+    that contains additional information about the subject of the tribute page. 
+    HINT: You must give your element an attribute of target and set it to _blank in order for your link
+    to open in a new tab
+8). Your #image should use max-width and height properties to resize responsively, relative to the
+    width of its parent element, without exceeding its original size
+9). Your img element should be centered within its parent element
+
+Fulfill the user stories and pass all the tests below to complete this project.
+Give it your own personal style. Happy Coding!
+
+Note: Be sure to add <link rel="stylesheet" href="styles.css"> in your HTML to link your stylesheet
+    and apply your CSS
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+<main id="main">
+
+<header id="title">
+    <h1>MARIE SKŁODOWSKA CURIE</h1>
+    <p>The first  lady of nuclear physics</p>
+</header>
+
+<figure id="img-div">
+    <img id="image" src="MariaCurie.jpg" alt="Marie Skłodowska Curie">
+    <figcaption id="img-caption">Maria Skłodowska Curie</figcaption>
+</figure>
+
+<div id="tribute-info">
+    <p>November 7, 1867 - Maria Salomea Skłodowska, later known as Marie Curie, is born in Warsaw,
+    in what is at the time the Congress Kingdom of Poland, Russian Empire.
+    
+    1883–85 - Skłodowska wins a gold medal as top student in her class upon completion of her secondary
+    education. Because her father has lost his savings through bad investment she has to go to work, 
+    finding employment first as a teacher and later as a governess. From her earnings she is able to finance
+    her sister Bronislawa’s medical studies in Paris, France, with the understanding that Bronislawa will 
+    in turn later help her to get an education.
+
+    1891–94 - Skłodowska moves to Paris in 1891 to study at the Sorbonne. She begins to use the name
+    Marie. She studies far into the night and completes degrees in physics and math. In the spring of
+    1894 she meets Pierre Curie, who is completing his doctorate of science.
+
+    1895 - Marie and Pierre marry on July 25. She takes her husband’s surname. Their marriage marks the
+    beginning of a partnership that is soon to achieve results of world significance.
+
+    1896–98 - In 1896 a French scientist named Henri Becquerel finds that the element uranium gives off
+    unusual rays of energy. He passes his findings on to Marie, who begins studying the phenomenon, which
+    she later names radioactivity. In 1898 the Curies announce their discovery of two new elements, radium
+    and polonium. They name polonium after Marie’s homeland of Poland.
+
+    1903 - Marie earns her doctorate of science in June, becoming the first woman in France to receive
+    a doctoral degree. In November Marie and Pierre share with Becquerel the Nobel Prize for Physics for
+    the discovery and research of radioactivity. Marie is the first woman to receive the honor.
+    (In submitting its nomination to the Nobel committee, the French Academy of Sciences had not
+    acknowledged Marie’s contributions and omitted her name, but it was later put forward after Pierre
+    insisted that they be considered for the prize together.)
+
+    1906 - Pierre dies in a traffic accident on April 19. Marie takes over his professorship at the
+    Sorbonne in May. She is the first woman to teach there. She devotes all of her energy to completing
+    alone the scientific work that she and Pierre had undertaken.
+
+    1910 - Marie’s fundamental treatise on radioactivity is published.
+
+    1911 - Marie is awarded the Nobel Prize for Chemistry, for the isolation of pure radium.
+
+    1914–18 - World War I begins in 1914. Throughout the war Marie, with the help of her daughter Irène
+    devotes herself to making X-ray technology available for use in the medical treatment of wounded soldiers.
+
+    1922 - From this date Marie focuses her research on the chemistry of radioactive substances and the
+    medical applications of these substances.
+
+    1932 - Marie helps open the Radium Institute in Warsaw. Her sister, Bronislawa, is named director of the
+    institute.
+
+    July 4, 1934 - Marie dies near Sallanches, France. Her death is the result of leukemia caused by exposure
+    to radiation.
+
+    1944 - American chemists discover a new element. They name it curium in honor of Marie and Pierre Curie.
+</p>
+</div>
+
+<p>I you want to know more, click 
+    <a id="tribute-link" href="https://en.wikipedia.org/wiki/Marie_Curie" target="_blank">this</a>
+</p>
+
+
+
+
+
+
+
+</main>
+</body>
+</html>
