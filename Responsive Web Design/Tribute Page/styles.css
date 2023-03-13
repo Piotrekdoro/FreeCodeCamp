@@ -33,6 +33,23 @@ figcaption {
 #tribute-info {
     margin: auto;
     max-width: 80%;
-    background-color: blue;
-    color: aqua;
+    background-color: aliceblue;
+    border: 0.5rem solid gray;
+}
+
+li {
+    margin: 1rem;
+}
+
+h2 {
+    text-align: center;
+}
+
+strong {
+    color: rgb(163, 117, 18) ;
+    font-style: italic;
+}
+
+blockquote {
+    font-style: italic;
 }
