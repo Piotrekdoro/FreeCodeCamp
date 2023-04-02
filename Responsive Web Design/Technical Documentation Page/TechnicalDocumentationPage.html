@@ -35,9 +35,214 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <title>An in depth guide to the map() method</title>
 </head>
 <body>
-    <h1>Test</h1>
+<main id="main-doc">
+
+<nav id="navbar">
+<header>Array.prototype.map() Documentation Page</header>
+</nav>
+
+<section id="Array.prototype.map()" class="main-section">
+    <div class="header-div">
+        <header><h1>Array.prototype.map()</h1></header>
+    </div>
+    <div class="text-div">
+        <p>
+            The <code class="inline-code">map()</code> method creates a new array populated with the
+            results of calling a provided function on every element in the calling array.
+        <p>
+    </div>
+</section>
+
+<section id="Syntax" class="main-section">
+    <header><h3>Syntax</h3></header>
+    <div class="code-div">
+        <code class="code-block">
+          <span class="method">map</span>(callbackFn)<br>
+          <span class="method">map</span>(callbackFn, thisArg)
+        </code>
+    </div>
+</section>
+
+<section id="Parameters" class="main-section">
+    <header><h3>Parameters</h3></header>
+    <div class="text-div">
+          <ul>
+            <li><code class="inline-code">callbackFn</code> - A function to execute for each element in the
+            array. Its return value is added as a single element in the new array. The function is called with
+            the following arguments:</li>
+            <li><code class="inline-code">element</code> - The current element being processed in
+            the array.</li>
+            <li><code class="inline-code">index</code> - The index of the current element being processed in
+            the array.</li>
+            <li><code class="inline-code">array</code> - The array <code class="inline-code">map()</code>
+            was called upon.</li>
+            <li><code class="inline-code">thisArg</code> - A value to use as <code class="inline-code">this</code>
+            when executing <code class="inline-code">callbackFn</code>.</li>
+          </ul>
+    </div>
+</section>
+
+<section id="Return_value" class="main-section">
+    <header><h3>Return value</h3></header>
+    <div class="text-div">
+        <p>
+            A new array with each element being the result of the callback function.
+        </p>
+    </div>
+</section>
+
+<section id="Description" class="main-section">
+    <header><h3>Description</h3></header>
+    <div class="text-div">
+        <p>
+            The <code class="inline-code">map()</code> method is an iterative method. It calls a provided 
+            <code class="inline-code">callbackFn</code> function once for each element in an array and
+            constructs a new array from the results. <br> <br>
+
+            <code class="inline-code">callbackFn</code> is invoked only for array indexes which have
+            assigned values. It is not invoked for empty slots in sparse arrays. <br> <br>
+
+            The <code class="inline-code">map()</code> method is a copying method. It does not alter
+            <code class="inline-code">this</code>. However, the function provided as 
+            <code class="inline-code">callbackFn</code> can mutate the array. Note, however, that the
+            length of the array is saved before the first invocation 
+            of <code class="inline-code">callbackFn</code>. Therefore:
+        </p>
+          <ul>
+            <li><code class="inline-code">callbackFn</code> - will not visit any elements added beyond
+                the array's initial length when the call
+                to <code class="inline-code">map()</code> began.</li>
+            <li>Changes to already-visited indexes do not cause callbackFn to be invoked on
+                them again.</li>
+            <li>If an existing, yet-unvisited element of the array is 
+                changed by <code class="inline-code">callbackFn</code> , its value passed to the
+                <code class="inline-code">callbackFn</code> will be the value at the time that 
+                element gets visited. Deleted elements are not visited.</li>
+          </ul>
+          <p>
+            The <code class="inline-code">map()</code> method is generic. It only expects the this value
+            to have a <code class="inline-code">length</code> property and integer-keyed properties. <br><br>
+
+            Since <code class="inline-code">map()</code> builds a new array, calling it without using the
+            returned array is an anti-pattern; use <code class="inline-code">forEach</code> or 
+            <code class="inline-code">for...of</code> instead.
+          </p>
+    </div>
+</section>
+
+<section id="Mapping_an_array_of_numbers_to_an_array_of_square_roots" class="main-section">
+    <header><h3>Mapping an array of numbers to an array of square roots</h3></header>
+    <div class="text-div">
+        <p>
+            The following code takes an array of numbers and creates a new array containing the square
+            roots of the numbers in the first array.
+        </p>
+    </div>
+    <div class="code-div">
+        <code class="code-block">
+            <span class="data-type">const</span> numbers = [<span class="variable">1</span>,
+            <span class="variable">4</span>,
+            <span class="variable">9</span>]; <br>
+            <span class="data-type">const</span> roots = numbers.<span class="method">map</span>((num) =>
+            Math.<span class="method">sqrt</span>(num)); <br><br>
+            
+            <span class="comment">// roots is now [1, 2, 3] <br>
+            // numbers is still [1, 4, 9]</span>
+        </code>
+    </div>
+</section>
+
+<section id="Using_map_to_reformat_objects_in_an_array" class="main-section">
+    <header><h3>Using map to reformat objects in an array</h3></header>
+    <div class="text-div">
+        <p>
+            The following code takes an array of objects and creates a new array containing the newly
+            reformatted objects.
+        </p>
+    </div>
+    <div class="code-div">
+        <code class="code-block">
+            <span class="data-type">const</span> kvArray = [<br>
+            &nbsp&nbsp{ <span class="method">key</span>: <span class="variable">1</span>, <span class="method">value</span>: <span class="variable">10</span> },<br>
+            &nbsp&nbsp{ <span class="method">key</span>: <span class="variable">2</span>, <span class="method">value</span>: <span class="variable">20</span> },<br>
+            &nbsp&nbsp{ <span class="method">key</span>: <span class="variable">3</span>, <span class="method">value</span>: <span class="variable">30</span> },<br>
+            ];
+        </code>
+    </div>
+</section>
+
+<section id="Mapping_an_array_of_numbers_using_a_function_containing_an_argument" class="main-section">
+    <header><h3>Mapping an array of numbers using a function containing an argument</h3></header>
+    <div class="text-div">
+        <p>
+            The following code shows how <code class="inline-code">map</code> works when a function requiring
+            one argument is used with it. The argument will automatically be assigned from each element of the array
+            as <code class="inline-code">map</code> loops through the original array.
+        </p>
+    </div>
+    <div class="code-div">
+        <code class="code-block">
+            <span class="data-type">const</span> numbers = [<span class="variable">1</span>, <span class="variable">4</span>, <span class="variable">9</span>]; <br>
+            <span class="data-type">const</span> doubles = numbers.<span class="method">map</span>((num) => num * <span class="variable">2</span>); <br> <br> <br>
+            
+            console.<span class="method">log</span>(doubles); <span class="comment">// [2, 8, 18]</span> <br>
+            console.<span class="method">log</span>(numbers); <span class="comment">// [1, 4, 9]</span>
+        </code>
+    </div>
+</section>
+
+<section id="Calling_map()_on_non-array_objects" class="main-section">
+    <header><h3>Calling map() on non-array objects</h3></header>
+    <div class="text-div">
+        <p>
+            This example shows how to iterate through a collection of objects collected by querySelectorAll. This is
+            because <code class="inline-code">querySelectorAll</code> returns a 
+            <code class="inline-code">NodeList</code> (which is a collection of objects). <br> <br>
+
+            In this case, we return all the selected <code class="inline-code">options</code>' values on the screen:
+        </p>
+    </div>
+    <div class="code-div">
+        <code class="code-block">
+            <span class="data-type">const</span> elems = document.<span class="method">querySelectorAll</span>(<span class="variable">"select option:checked"</span>); <br>
+            <span class="data-type">const</span> values = Array.prototype.<span class="method">map</span>.<span class="method">call</span>(elems, ({ value }) => value);
+        </code>
+    </div>
+    <div class="text-div">
+        <p>
+            An easier way would be the <code class="inline-code">Array.from()</code> method.
+        </p>
+    </div>
+</section>
+
+<section id="Using_map()_on_sparse_arrays" class="main-section">
+    <header><h3>Using map() on sparse arrays</h3></header>
+    <div class="text-div">
+        <p>
+            A sparse array remains sparse after <code class="inline-code">map()</code>. The indices of empty slots are
+            still empty in the returned array, and the callback function won't be called on them.
+        </p>
+    </div>
+    <div class="code-div">
+        <code class="code-block">
+            console.<span class="method">log</span>( <br>
+            &nbsp&nbsp[<span class="variable">1</span>, , <span class="variable">3</span>].<span class="method">map</span>((x, index) => { <br>
+                &nbsp&nbsp&nbsp&nbspconsole.<span class="method">log</span>(<span class="string">`Visit</span> ${index}<span class="string">`</span>); <br>
+                &nbsp&nbsp&nbsp&nbsp<span class="data-type">return</span> x * 2; <br>
+            &nbsp&nbsp}), <br>
+            ); <br> <br>
+            
+            <span class="comment">// Visit 0 <br>
+                // Visit 2 <br>
+                // [2, empty, 6]</span>
+            
+        </code>
+    </div>
+</section>
+
+</main>
 </body>
 </html>
